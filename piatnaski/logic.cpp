@@ -3,7 +3,15 @@
 
 void InitBoard()
 {
-	board[head.Y][head.X] = 1;
+	/*board[head.Y][head.X] = 1;*/
+	for (size_t i = 0; i < ROWS; i++)
+	{
+		for (size_t j = 0; j < COLLS; j++)
+		{
+			if (i == ROWS - 1 && j == COLLS - 1)	continue;
+			board[i][j] = i * COLLS + j + 1;
+		}
+	}
 }
 
 void UpdateHead(int key)
@@ -34,5 +42,5 @@ void UpdateHead(int key)
 
 void UpdateBoard()
 {
-	board[head.Y][head.X] = 1;
+	/*board[head.Y][head.X] = 1;*/
 }

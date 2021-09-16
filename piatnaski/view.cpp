@@ -9,16 +9,14 @@ void DrawBoard()
 		for (size_t j = 0; j < COLLS; j++)
 		{
 			COORD tmp{ LEFT_BOARD + j * SCALE_X, UP_BOARD + i * SCALE_Y };
-			if (board[i][j] == 1)
+			SetConsoleCursorPosition(handle, tmp);
+			SetConsoleTextAttribute(handle, RED);
+			if (board[i][j])
 			{
-				SetConsoleCursorPosition(handle, tmp);
-				SetConsoleTextAttribute(handle, RED);
-				std::cout << (char)1;
+				std::cout << board[i][j];
 			}
 			else
 			{
-				SetConsoleCursorPosition(handle, tmp);
-				SetConsoleTextAttribute(handle, RED);
 				std::cout << ' ';
 			}
 		}

@@ -7,7 +7,7 @@ CONSOLE_CURSOR_INFO cci;
 
 int board [ROWS][COLLS] { 0 };
 
-COORD head {0, 0};
+COORD head {COLLS - 1, ROWS - 1};
 
 int ReadKey()
 {
@@ -26,7 +26,7 @@ int ReadKey()
 void InitApp()
 {
 	cci.bVisible = false;
-	cci.dwSize = 100;
+	cci.dwSize = 200;
 	SetConsoleCursorInfo(handle, &cci);
 }
 
