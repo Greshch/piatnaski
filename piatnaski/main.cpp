@@ -7,9 +7,10 @@
 int main()
 {
 	using namespace std;
+	
 	InitApp();
 	InitBoard();
-	while (true)
+	/*while (true)
 	{
 		int key = ReadKey();
 		if (key == EXIT)	break;
@@ -17,9 +18,10 @@ int main()
 		Sleep(100);
 		UpdateHead(key);
 		UpdateBoard();
-	}
+	}*/
 	
 	CloseApp();
-	//PrintBoard();
+	PrintBoard();
+	cout << IsWin() << endl;
 	return 0;
 }

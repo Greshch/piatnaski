@@ -1,5 +1,7 @@
 #pragma once
 #include <Windows.h>
+#include <utility>
+#include <vector>
 
 extern HANDLE handle;
 
@@ -11,6 +13,7 @@ int const ROWS = 4;
 int const COLLS = 4;
 
 extern COORD head;
+extern std::vector < std::pair <COORD, int> > activeNode;
 extern int board[ROWS][COLLS];
 
 extern CONSOLE_CURSOR_INFO cci;

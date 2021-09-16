@@ -1,3 +1,4 @@
+#include <iostream>
 #include "logic.h"
 #include "global.h"
 
@@ -43,4 +44,23 @@ void UpdateHead(int key)
 void UpdateBoard()
 {
 	/*board[head.Y][head.X] = 1;*/
+}
+
+bool IsWin()
+{
+	for (size_t i = 0; i < ROWS; i++)
+	{
+		for (size_t j = 0; j < COLLS; j++)
+		{
+			if (i == ROWS - 1 && j == COLLS - 1)
+			{
+				if (board[i][j] != 0)	return false;
+			}
+			else 
+			{
+				if (board[i][j] != i * COLLS + j + 1)	return false;
+			}
+		}
+	}
+	return true;
 }
