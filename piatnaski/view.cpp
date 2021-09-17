@@ -14,6 +14,7 @@ void DrawBoard()
 			SetConsoleTextAttribute(handle, DARKGREEN);
 			if (board[i][j])
 			{
+				if (IsNodeActive(i, j))	SetConsoleTextAttribute(handle, YELLOW);
 				std::cout << board[i][j];
 			}
 			else
