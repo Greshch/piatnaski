@@ -110,3 +110,16 @@ bool IsDirrectKey(int key)
 					||
 		   key == DOWN;
 }
+
+It_Node GetNodeByDirect(int dir)
+{
+	using namespace std;
+	return find_if(activeNode.begin(), activeNode.end(),
+		[dir](auto const& e) {
+			return e.second == dir;
+		}
+	);
+}
+
+
+

@@ -1,4 +1,9 @@
 #pragma once
+#include <vector>
+#include <utility>
+#include <Windows.h>
+
+typedef std::vector<std::pair<COORD, int>>::iterator It_Node;
 
 void InitBoard();
 
@@ -15,3 +20,5 @@ void ShuffleBoard(int times = 25);
 bool IsWin();
 
 bool IsDirrectKey(int key);
+
+It_Node GetNodeByDirect(int dir);
