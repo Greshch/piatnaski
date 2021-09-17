@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="models.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="global.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
@@ -33,9 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="models.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="view.h">

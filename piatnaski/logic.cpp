@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "logic.h"
 #include "global.h"
 
@@ -44,6 +45,34 @@ void UpdateHead(int key)
 void UpdateBoard()
 {
 	/*board[head.Y][head.X] = 1;*/
+}
+
+void GetActiveNode()
+{
+	activeNode.clear();
+	auto x = head.X;
+	auto y = head.Y;
+	//LEFT 
+	if (x > 0)	activeNode.push_back({ {(short)(x - 1), y }, RIGHT });
+	//UP 
+	if (y > 0)	activeNode.push_back({ {x, (short)(y - 1) }, DOWN });
+	//RIGHT 
+	if (x < COLLS - 1)	activeNode.push_back({ {(short)(x + 1), y }, LEFT });
+	//DOWN
+	if (y < ROWS - 1)	activeNode.push_back({ {x, (short)(y + 1) }, UP });
+}
+
+bool IsNodeActive(int row, int col)
+{
+	using namespace std;
+	COORD tmp{ col, row };
+	return activeNode.end() != find_if(activeNode.begin(), activeNode.end(),
+		[tmp](auto const& e) {
+			return tmp.X == e.first.X 
+				   &&
+				   tmp.Y == e.first.Y;
+		}
+	);
 }
 
 bool IsWin()

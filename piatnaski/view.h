@@ -9,3 +9,5 @@ short const SCALE_Y = 1;
 void DrawBoard();
 
 void PrintBoard();
+
+void PrintActiveNode();

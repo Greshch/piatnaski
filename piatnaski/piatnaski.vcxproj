@@ -142,13 +142,11 @@
     <ClCompile Include="global.cpp" />
     <ClCompile Include="logic.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="models.cpp" />
     <ClCompile Include="view.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="global.h" />
     <ClInclude Include="logic.h" />
-    <ClInclude Include="models.h" />
     <ClInclude Include="view.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

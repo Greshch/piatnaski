@@ -7,10 +7,10 @@
 int main()
 {
 	using namespace std;
-	
 	InitApp();
 	InitBoard();
-	/*while (true)
+
+	while (true)
 	{
 		int key = ReadKey();
 		if (key == EXIT)	break;
@@ -18,10 +18,11 @@ int main()
 		Sleep(100);
 		UpdateHead(key);
 		UpdateBoard();
-	}*/
+		GetActiveNode();
+	}
 	
 	CloseApp();
-	PrintBoard();
-	cout << IsWin() << endl;
+	//PrintActiveNode();
+	//PrintBoard();
 	return 0;
 }
