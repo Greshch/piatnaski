@@ -12,13 +12,11 @@ int main()
 
 	while (true)
 	{
+		DrawBoard();
 		int key = ReadKey();
 		if (key == EXIT)	break;
-		DrawBoard();
+		UpdateBoard(key);
 		Sleep(100);
-		UpdateHead(key);
-		UpdateBoard();
-		GetActiveNode();
 	}
 	
 	CloseApp();

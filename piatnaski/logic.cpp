@@ -18,7 +18,7 @@ void InitBoard()
 
 void UpdateHead(int key)
 {
-	board[head.Y][head.X] = 0;
+	/*board[head.Y][head.X] = 0;*/
 	switch (key)
 	{
 	case LEFT:
@@ -40,11 +40,17 @@ void UpdateHead(int key)
 	default:
 		break;
 	}
+	board[head.Y][head.X] = 0;
 }
 
-void UpdateBoard()
+void UpdateBoard(int key)
 {
-	/*board[head.Y][head.X] = 1;*/
+	static bool first_call = true;
+	if (!IsDirrectKey(key) && !first_call)	return;
+
+	UpdateHead(key);
+	GetActiveNode();
+	first_call = false;
 }
 
 void GetActiveNode()
@@ -92,4 +98,15 @@ bool IsWin()
 		}
 	}
 	return true;
+}
+
+bool IsDirrectKey(int key)
+{
+	return key == LEFT
+					||
+		   key == UP
+					||
+		   key == RIGHT
+					||
+		   key == DOWN;
 }
