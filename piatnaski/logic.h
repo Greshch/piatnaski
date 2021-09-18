@@ -22,3 +22,5 @@ bool IsWin();
 bool IsDirrectKey(int key);
 
 It_Node GetNodeByDirect(int dir);
+
+int GetReverseDir(int dir);

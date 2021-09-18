@@ -48,7 +48,7 @@ void UpdateBoard(int key)
 	static bool first_call = true;
 	if (!IsDirrectKey(key) && !first_call)	return;
 
-	UpdateHead(key);
+	UpdateHead(GetReverseDir(key));
 	GetActiveNode();
 	first_call = false;
 }
@@ -119,6 +119,28 @@ It_Node GetNodeByDirect(int dir)
 			return e.second == dir;
 		}
 	);
+}
+
+int GetReverseDir(int dir)
+{
+	switch (dir)
+	{
+	case LEFT:
+		return RIGHT;
+
+	case RIGHT:
+		return LEFT;
+
+	case UP:
+		return DOWN;
+
+	case DOWN:
+		return UP;
+
+	default:
+		return 0;
+		break;
+	}
 }
 
 
