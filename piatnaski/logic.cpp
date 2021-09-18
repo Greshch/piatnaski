@@ -40,14 +40,18 @@ void UpdateHead(int key)
 	default:
 		break;
 	}
-	board[head.Y][head.X] = 0;
+	//board[head.Y][head.X] = 0;
 }
 
 void UpdateBoard(int key)
 {
 	static bool first_call = true;
 	if (!IsDirrectKey(key) && !first_call)	return;
-
+	GetActiveNode();
+	auto it = GetNodeByDirect(key);
+	if (!IsValidNode(it))	return;
+	COORD validNode{it->first.X, it->first.Y};
+	SwapCellsBoard(head, validNode);
 	UpdateHead(GetReverseDir(key));
 	GetActiveNode();
 	first_call = false;
@@ -141,6 +145,18 @@ int GetReverseDir(int dir)
 		return 0;
 		break;
 	}
+}
+
+bool IsValidNode(It_Node pNode)
+{
+	return pNode != activeNode.end();
+}
+
+void SwapCellsBoard(COORD const& a, COORD const& b)
+{
+	auto tmp = board[a.Y][a.X];
+	board[a.Y][a.X] = board[b.Y][b.X];
+	board[b.Y][b.X] = tmp;
 }
 
 

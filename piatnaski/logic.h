@@ -24,3 +24,7 @@ bool IsDirrectKey(int key);
 It_Node GetNodeByDirect(int dir);
 
 int GetReverseDir(int dir);
+
+bool IsValidNode(It_Node pNode);
+
+void SwapCellsBoard(COORD const& a, COORD const& b);
