@@ -12,7 +12,7 @@ enum colors { BLUE = 9, RED = 12, YELLOW = 14, DARKGREEN = 2, WHITE = 7, PURPLE 
 int const ROWS = 4;
 int const COLLS = 4;
 
-int const SHUFLE_TIMES = 25;
+int const SHUFLE_TIMES = 1024;
 
 extern COORD head;
 extern COORD end_line;

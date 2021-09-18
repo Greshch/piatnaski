@@ -14,7 +14,7 @@ void DrawBoard()
 			SetConsoleTextAttribute(handle, DARKGREEN);
 			if (board[i][j])
 			{
-				if (IsNodeActive(i, j))	SetConsoleTextAttribute(handle, YELLOW);
+				//if (IsNodeActive(i, j))	SetConsoleTextAttribute(handle, YELLOW);
 				std::cout << board[i][j];
 			}
 			else
@@ -51,8 +51,14 @@ void PrintActiveNode()
 
 void DrawResult(bool win)
 {
-	if (!win)	return;
+	if (!win)
+	{
+		SetConsoleCursorPosition(handle, end_line);
+		SetConsoleTextAttribute(handle, RED);
+		std::cout << "...EXIT...\n";
+		return;
+	}
 	SetConsoleCursorPosition(handle, end_line);
-	SetConsoleTextAttribute(handle, DARKGREEN);
-	std::cout << "Well done!!...Press any key\n";
+	SetConsoleTextAttribute(handle, YELLOW);
+	std::cout << "...Well done!!\n";
 }
