@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Windows.h>
 #include "view.h"
 #include "global.h"
 #include "logic.h"
@@ -10,11 +11,12 @@ void DrawBoard()
 		for (size_t j = 0; j < COLLS; j++)
 		{
 			COORD tmp{ LEFT_BOARD + j * SCALE_X, UP_BOARD + i * SCALE_Y };
+			// Draw Nums
 			SetConsoleCursorPosition(handle, tmp);
-			SetConsoleTextAttribute(handle, DARKGREEN);
+			SetConsoleTextAttribute(handle, FOREGROUND_INTENSITY | DARKGREEN);
 			if (board[i][j])
 			{
-				//if (IsNodeActive(i, j))	SetConsoleTextAttribute(handle, YELLOW);
+				//SetConsoleTextAttribute(handle, FOREGROUND_INTENSITY | BACKGROUND_BLUE);
 				std::cout << board[i][j];
 			}
 			else
