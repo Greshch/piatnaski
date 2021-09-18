@@ -11,6 +11,8 @@ int board [ROWS][COLLS] { 0 };
 COORD head {COLLS - 1, ROWS - 1};
 std::vector < std::pair <COORD, int> > activeNode;
 
+COORD end_line{ 0, 15 };
+
 
 
 int ReadKey()

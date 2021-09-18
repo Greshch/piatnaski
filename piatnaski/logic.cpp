@@ -85,6 +85,15 @@ bool IsNodeActive(int row, int col)
 	);
 }
 
+void ShuffleBoard(int times)
+{
+	while (times--)
+	{
+		int key = GetRandomeKey();
+		UpdateBoard(key);
+	}
+}
+
 bool IsWin()
 {
 	for (size_t i = 0; i < ROWS; i++)
@@ -157,6 +166,34 @@ void SwapCellsBoard(COORD const& a, COORD const& b)
 	auto tmp = board[a.Y][a.X];
 	board[a.Y][a.X] = board[b.Y][b.X];
 	board[b.Y][b.X] = tmp;
+}
+
+int GetRandomeKey()
+{
+	int key = rand() % 4;
+	switch (key)
+	{
+	case 0:
+		key = LEFT;
+		break;
+
+	case 1:
+		key = UP;
+		break;
+
+	case 2:
+		key = RIGHT;
+		break;
+
+	case 3:
+		key = DOWN;
+		break;
+
+	default:
+		break;
+	}
+
+	return key;
 }
 
 

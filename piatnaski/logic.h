@@ -2,6 +2,7 @@
 #include <vector>
 #include <utility>
 #include <Windows.h>
+#include "global.h"
 
 typedef std::vector<std::pair<COORD, int>>::iterator It_Node;
 
@@ -15,7 +16,7 @@ void GetActiveNode();
 
 bool IsNodeActive(int row, int col);
 
-void ShuffleBoard(int times = 25);
+void ShuffleBoard(int times = SHUFLE_TIMES);
 
 bool IsWin();
 
@@ -28,3 +29,5 @@ int GetReverseDir(int dir);
 bool IsValidNode(It_Node pNode);
 
 void SwapCellsBoard(COORD const& a, COORD const& b);
+
+int GetRandomeKey();

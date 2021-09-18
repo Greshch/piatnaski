@@ -6,21 +6,24 @@
 
 int main()
 {
-	using namespace std;
+	srand(time(0));
 	InitApp();
 	InitBoard();
+	ShuffleBoard();
 
+	bool win = false;
 	while (true)
 	{
+		win = IsWin();
 		DrawBoard();
 		int key = ReadKey();
-		if (key == EXIT)	break;
+		if (key == EXIT || win)	break;
 		UpdateBoard(key);
 		Sleep(100);
 	}
 	
+	DrawResult(win);
+	Sleep(2000);
 	CloseApp();
-	//PrintActiveNode();
-	//PrintBoard();
 	return 0;
 }

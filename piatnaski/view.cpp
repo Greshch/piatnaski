@@ -48,3 +48,11 @@ void PrintActiveNode()
 		std::cout << std::endl;
 	}
 }
+
+void DrawResult(bool win)
+{
+	if (!win)	return;
+	SetConsoleCursorPosition(handle, end_line);
+	SetConsoleTextAttribute(handle, DARKGREEN);
+	std::cout << "Well done!!...Press any key\n";
+}

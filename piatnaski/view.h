@@ -11,3 +11,5 @@ void DrawBoard();
 void PrintBoard();
 
 void PrintActiveNode();
+
+void DrawResult(bool win);
